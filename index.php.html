@@ -300,13 +300,14 @@ p.typewriter-text {
         </div>
         <button onclick="incrementTasbih()" class="btn-increment btn-large-round">PENCET</button>
         <button onclick="resetTasbih()" class="btn-reset">R</button>
-        
+
     </div>
-        <!-- Tambahkan elemen audio untuk memutar musik -->
+    
+            <!-- Tambahkan elemen audio untuk memutar musik -->
    <audio autoplay loop>
     <source src="Audio/zahir-terbaru-2020.mp3" type="audio/mpeg"> <!-- Ganti 'your-music.mp3' dengan URL atau path ke file musik Anda -->
 </audio>
-    
+
     <script>
         let count = parseInt(localStorage.getItem('tasbihCount')) || 0;
         const tasbihCount = document.getElementById('tasbih-count');
