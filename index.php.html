@@ -309,66 +309,49 @@ p.typewriter-text {
 </audio>
 
     <script>
-<script>
-    let count = parseInt(localStorage.getItem('tasbihCount')) || 0;
-    const tasbihCount = document.getElementById('tasbih-count');
-    const digit1 = document.getElementById('digit1');
-    const digit2 = document.getElementById('digit2');
-    const digit3 = document.getElementById('digit3');
-    const digit4 = document.getElementById('digit4');
-    const incrementButton = document.querySelector('.btn-increment');
-    const resetButton = document.querySelector('.btn-reset');
-    let vibrateEnabled = true;
+        let count = parseInt(localStorage.getItem('tasbihCount')) || 0;
+        const tasbihCount = document.getElementById('tasbih-count');
+        const digit1 = document.getElementById('digit1');
+        const digit2 = document.getElementById('digit2');
+        const digit3 = document.getElementById('digit3');
+        const digit4 = document.getElementById('digit4');
+        const incrementButton = document.querySelector('.btn-increment');
+        const resetButton = document.querySelector('.btn-reset');
+        let vibrateEnabled = true;
 
-    updateTasbihCount();
-
-    function incrementTasbih() {
-        count++;
         updateTasbihCount();
-        saveTasbihCount();
 
-        if (vibrateEnabled) {
-            incrementButton.classList.add('vibrate-on');
-            setTimeout(() => {
-                incrementButton.classList.remove('vibrate-on');
-            }, 300);
+        function incrementTasbih() {
+            count++;
+            updateTasbihCount();
+            saveTasbihCount();
+
+            if (vibrateEnabled) {
+                incrementButton.classList.add('vibrate-on');
+                setTimeout(() => {
+                    incrementButton.classList.remove('vibrate-on');
+                }, 300);
+            }
         }
-    }
 
-    function resetTasbih() {
-        count = 0;
-        incrementButton.disabled = false;
-        updateTasbihCount();
-        saveTasbihCount();
-    }
-
-    function updateTasbihCount() {
-        const countString = count.toString().padStart(4, '0');
-        digit1.innerText = countString[0];
-        digit2.innerText = countString[1];
-        digit3.innerText = countString[2];
-        digit4.innerText = countString[3];
-
-        // Set opacity for digits that have a value of 0
-        setDigitOpacity(digit1);
-        setDigitOpacity(digit2);
-        setDigitOpacity(digit3);
-        setDigitOpacity(digit4);
-    }
-
-    function setDigitOpacity(digitElement) {
-        if (digitElement.innerText === '0') {
-            digitElement.style.opacity = '0.5';
-        } else {
-            digitElement.style.opacity = '1';
+        function resetTasbih() {
+            count = 0;
+            incrementButton.disabled = false;
+            updateTasbihCount();
+            saveTasbihCount();
         }
-    }
 
-    function saveTasbihCount() {
-        localStorage.setItem('tasbihCount', count.toString());
-    }
-</script>
+        function updateTasbihCount() {
+            const countString = count.toString().padStart(4, '0');
+            digit1.innerText = countString[0];
+            digit2.innerText = countString[1];
+            digit3.innerText = countString[2];
+            digit4.innerText = countString[3];
+        }
 
+        function saveTasbihCount() {
+            localStorage.setItem('tasbihCount', count.toString());
+        }
 
 // Menggunakan JavaScript untuk menentukan opasitas digit
 function updateTasbihCount() {
