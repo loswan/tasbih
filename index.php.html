@@ -302,7 +302,6 @@ p.typewriter-text {
         <button onclick="resetTasbih()" class="btn-reset">R</button>
 
     </div>
- <audio id="audio" src="Audio/zahir-terbaru-2020.mp3"></audio>
     <script>
         let count = parseInt(localStorage.getItem('tasbihCount')) || 0;
         const tasbihCount = document.getElementById('tasbih-count');
@@ -370,15 +369,6 @@ function setDigitOpacity(digitElement) {
         digitElement.style.opacity = '1';
     }
 }
-
-// Putar audio setiap kali tombol ditekan
-            playAudio();
-        }
-
-        function playAudio() {
-            var audio = document.getElementById("audio");
-            audio.play();
-        }
 
 
     </script>
