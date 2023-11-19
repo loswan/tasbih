@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Malik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('image/bib.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            cursor: url('image/joi.jpeg') auto;
+        }
+
+        .tasbih-container {
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .tasbih {
+            font-size: 36px;
+            color: #333;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @font-face {
+    font-family: myfont;
+    src: url(fonts/digital.ttf.TTF);
+        }
+
+        .digit {
+    font-family: myfont;
+    font-size: 2em;
+    border: none; /* Menghilangkan border pada digit */
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+}
+
+.digit:empty {
+    opacity: 0.5; /* Opacity untuk digit yang belum muncul angkanya (0) */
+}
+body {
+    font-family: 'Digital-7', sans-serif;
+}
+
+        .tasbih-label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .vibrate-on {
+            animation: vibrate 0.3s infinite;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translate(0); }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, 2px); }
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+/* Gaya khusus untuk tombol reset */
+
+.btn-reset {
+    animation: none;
+    border-radius: 50%;
+    width: 3px;
+    height: 3x;
+    top: 20%;
+    left: 5%;
+}
+
+.btn-large-round {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blue;
+    font-family: 'Dancing Script', cursive;
+    animation: floatAnimation 3s infinite;
+    border-radius: 50%;
+    /* Add the closing curly brace for .btn-large-round class */
+}
+
+/* Add missing CSS styles for the button class */
+button {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 20px;
+    font-family: cursive;
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    text-align: center;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,
+    #ffeb3b,#03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+button:hover {
+    animation: ani 4s linear infinite;
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,
+    #ffeb3b,#03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    transition: 1s;
+}
+
+button:hover::before {
+    filter: blur(20px);
+    border-radius: 50%;
+}
+
+button:active {
+    background: linear-gradient(90deg,#03a9f4,#f441a5,
+    #ffeb3b,#03a9f4);
+    border-radius: 50%;
+}
+
+h4 {
+    color: brown;
+    font-family: 'Dancing Script', cursive;
+}
+
+p.typewriter-text {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 0, 0);
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    word-spacing: 6px;
+}
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #333 }
+        }
+        
+        marquee {
+            color: #f3a407;
+            font-family: 'Dancing Script', cursive;
+            line-height: 20px;
+        }
+
+
+
+        body {
+            cursor: url('image/joi.jpeg'), auto;
+        }
+
+        @font-face {
+            font-family: 'Ticking Timebomb BB';
+            src: url('TickingTimebombBB.woff2') format('woff2'),
+                 url('TickingTimebombBB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body, a:hover {
+    cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), progress !important;
+  }
+
+
+/* Media Query */
+/* Extra large */
+@media (max-width: 1200px) {
+    .home .heart {
+        transform: translateX(-50%) translateY(45px);
+    }
+}
+
+/* Laptop */
+@media (max-width: 992px) {
+    html {
+        font-size: 75%;
+    }
+
+    .simply-countdown > .simply-section {
+        padding: 70px;
+    }
+
+    .home .heart {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 65%;
+    }
+
+    .simply-countdown > .simply-section {
+        padding: 70px;
+        margin: 5px;
+    }
+
+    .mynavbar .nav-link {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 576px) {
+    html {
+        font-size: 60%;
+    }  
+    
+    .simply-countdown > .simply-section {
+        padding: 45px;
+        margin: 3px;
+    }
+
+    .mynavbar .nav-link {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="tasbih-container">
+        <h4 class="typewriter-text">Semangat Dzikirnya Shuk😂</h4>
+        <marquee>Jika Bersama Dakwah Serapuh Itu, Sekuat Apa Jika Engkau Sendiri</marquee> 
+
+        <div class="tasbih-label"></div>
+        <div class="tasbih" id="tasbih-count">
+            <span class="digit" id="digit1">0</span>
+            <span class="digit" id="digit2">0</span>
+            <span class="digit" id="digit3">0</span>
+            <span class="digit" id="digit4">0</span>
+        </div>
+        <button onclick="incrementTasbih()" class="btn-increment btn-large-round">PENCET</button>
+        <button onclick="resetTasbih()" class="btn-reset">R</button>
+
+    </div>
+
+    <script>
+        let count = parseInt(localStorage.getItem('tasbihCount')) || 0;
+        const tasbihCount = document.getElementById('tasbih-count');
+        const digit1 = document.getElementById('digit1');
+        const digit2 = document.getElementById('digit2');
+        const digit3 = document.getElementById('digit3');
+        const digit4 = document.getElementById('digit4');
+        const incrementButton = document.querySelector('.btn-increment');
+        const resetButton = document.querySelector('.btn-reset');
+        let vibrateEnabled = true;
+
+        updateTasbihCount();
+
+        function incrementTasbih() {
+            count++;
+            updateTasbihCount();
+            saveTasbihCount();
+
+            if (vibrateEnabled) {
+                incrementButton.classList.add('vibrate-on');
+                setTimeout(() => {
+                    incrementButton.classList.remove('vibrate-on');
+                }, 300);
+            }
+        }
+
+        function resetTasbih() {
+            count = 0;
+            incrementButton.disabled = false;
+            updateTasbihCount();
+            saveTasbihCount();
+        }
+
+        function updateTasbihCount() {
+            const countString = count.toString().padStart(4, '0');
+            digit1.innerText = countString[0];
+            digit2.innerText = countString[1];
+            digit3.innerText = countString[2];
+            digit4.innerText = countString[3];
+        }
+
+        function saveTasbihCount() {
+            localStorage.setItem('tasbihCount', count.toString());
+        }
+
+// Menggunakan JavaScript untuk menentukan opasitas digit
+function updateTasbihCount() {
+    const countString = count.toString().padStart(4, '0');
+    digit1.innerText = countString[0];
+    digit2.innerText = countString[1];
+    digit3.innerText = countString[2];
+    digit4.innerText = countString[3];
+
+    // Set opasitas untuk digit yang bernilai 0
+    setDigitOpacity(digit1);
+    setDigitOpacity(digit2);
+    setDigitOpacity(digit3);
+    setDigitOpacity(digit4);
+}
+
+function setDigitOpacity(digitElement) {
+    if (digitElement.innerText === '0') {
+        digitElement.style.opacity = '0.5';
+    } else {
+        digitElement.style.opacity = '1';
+    }
+}
+
+
+    </script>
+
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+        
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+            
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+            
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+            
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+            
+            if (this.isDeleting) { delta /= 2; }
+            
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+            
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+        
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewriter-text');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].innerText;
+                new TxtType(elements[i], [toRotate], 2000);
+            }
+        };
+        
+    </script>
+</body>
+</html>
